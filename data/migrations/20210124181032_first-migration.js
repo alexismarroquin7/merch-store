@@ -31,6 +31,22 @@ exports.up = async (knex) => {
       categories.timestamp('created_at')
         .defaultTo(knex.fn.now());
     })
+    .createTable('genders', genders => {
+      genders.increments('gender_id');
+      genders.string('gender_name')
+        .unique()
+        .notNullable();
+      genders.timestamp('created_at')
+        .defaultTo(knex.fn.now());
+    })
+    .createTable('brands', brands => {
+      brands.increments('brand_id');
+      brands.string('brand_name')
+        .unique()
+        .notNullable();
+      brands.timestamp('created_at')
+        .defaultTo(knex.fn.now());
+    })
     .createTable('products', (products) => {
       products.increments('product_id');
       
@@ -46,7 +62,8 @@ exports.up = async (knex) => {
       products.timestamp('created_at')
         .defaultTo(knex.fn.now());
       
-      products.integer('discount_id')
+      products.decimal('discount_id')
+        .notNullable()
         .unsigned()
         .references('discount_id')
         .inTable('discounts')
@@ -55,8 +72,25 @@ exports.up = async (knex) => {
       
       products.integer('category_id')
         .unsigned()
+        .notNullable()
         .references('category_id')
         .inTable('categories')
+        .onDelete('RESTRICT')
+        .onUpdate('CASCADE');
+      
+      products.integer('brand_id')
+        .unsigned()
+        .notNullable()
+        .references('brand_id')
+        .inTable('brands')
+        .onDelete('RESTRICT')
+        .onUpdate('CASCADE');
+      
+      products.integer('gender_id')
+        .unsigned()
+        .notNullable()
+        .references('gender_id')
+        .inTable('genders')
         .onDelete('RESTRICT')
         .onUpdate('CASCADE');
     });
@@ -64,6 +98,7 @@ exports.up = async (knex) => {
 
 exports.down = async (knex) => {
   await knex.schema.dropTableIfExists('products');
+  await knex.schema.dropTableIfExists('genders');
   await knex.schema.dropTableIfExists('categories');
   await knex.schema.dropTableIfExists('discounts');
 };

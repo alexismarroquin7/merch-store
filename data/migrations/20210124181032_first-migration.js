@@ -62,7 +62,7 @@ exports.up = async (knex) => {
       products.timestamp('created_at')
         .defaultTo(knex.fn.now());
       
-      products.decimal('discount_id')
+      products.integer('discount_id')
         .notNullable()
         .unsigned()
         .references('discount_id')

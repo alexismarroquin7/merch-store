@@ -3,16 +3,14 @@ const helmet = require('helmet');
 const cors = require('cors');
 const path = require('path');
 
+const apiRouter = require('./api-router');
+
 const server = express();
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
-server.get('/api', (req, res) => {
-  res.status(200).json({
-    greet: "hello"
-  });
-});
+server.get('/api', apiRouter);
 
 server.get('*', (req, res) => {
   res.sendFile(

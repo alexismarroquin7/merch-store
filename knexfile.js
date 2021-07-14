@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 /*
   Put the above in your .env file. Some adjustments in the connection URLs will be needed:
 
@@ -12,14 +12,14 @@ require('dotenv').config()
 const pg = require('pg')
 
 if (process.env.DATABASE_URL) {
-  pg.defaults.ssl = { rejectUnauthorized: false }
+  pg.defaults.ssl = { rejectUnauthorized: false };
 }
 
 const sharedConfig = {
   client: 'pg',
-  migrations: { directory: './api/data/migrations' },
-  seeds: { directory: './api/data/seeds' },
-}
+  migrations: { directory: './data/migrations' },
+  seeds: { directory: './data/seeds' },
+};
 
 module.exports = {
   development: {
@@ -35,4 +35,4 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     pool: { min: 2, max: 10 },
   },
-}
+};

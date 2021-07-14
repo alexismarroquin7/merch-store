@@ -1,5 +1,5 @@
 {
-  "name": "build-week-scaffolding-node",
+  "name": "merch-store",
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js",
@@ -25,6 +25,7 @@
     "dotenv": "=8.2.0",
     "express": "=4.17.1",
     "helmet": "=4.4.1",
+    "jest": "^27.0.6",
     "knex": "=0.95.3",
     "knex-cleaner": "=1.3.1",
     "pg": "=8.5.1"
@@ -33,7 +34,6 @@
     "@types/jest": "=26.0.22",
     "cross-env": "=7.0.3",
     "eslint": "=7.22.0",
-    "jest": "=26.6.3",
     "nodemon": "=2.0.7",
     "supertest": "=6.1.3"
   }

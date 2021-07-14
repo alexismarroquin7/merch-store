@@ -8,8 +8,6 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
-server.use(express.static(path.join(__dirname, 'client/build')));
-
 server.get('/api', (req, res) => {
   res.status(200).json({
     greet: "hello"

@@ -12,8 +12,14 @@ server.use(express.static(path.join(__dirname, 'client/build')));
 
 server.get('/api', (req, res) => {
   res.status(200).json({
-    api: "up"
+    greet: "hello"
   });
+});
+
+server.get('*', (req, res) => {
+  res.sendFile(
+    path.join(__dirname, 'client/build/index.html')
+  );
 });
 
 module.exports = server;

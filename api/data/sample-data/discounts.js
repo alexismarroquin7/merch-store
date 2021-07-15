@@ -7,7 +7,8 @@ const discounts = [
   },
   {
     discount_name: '10% Off',  // 2
-    discount_percent: 0.1
+    discount_percent: 0.1,
+    active: 1
   },
   {
     discount_name: '25% Off',  // 3

@@ -5,7 +5,7 @@ const products = [
     product_price: 29.99,
     brand_id: 1,
     category_id: 1,
-    discount_id: 1,
+    discount_id: 2,
     gender_id: 1
   },
   {
@@ -14,7 +14,7 @@ const products = [
     product_price: 30.35,
     brand_id: 1,
     category_id: 5,
-    discount_id: 1,
+    discount_id: 3,
     gender_id: 1
   },
   {

@@ -1,4 +1,4 @@
-module.exports = [
+const brands = [
   {
     brand_name: 'Nike', // 1
   },
@@ -6,3 +6,5 @@ module.exports = [
     brand_name: 'Vans', // 2
   }
 ];
+
+module.exports = {brands};

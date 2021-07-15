@@ -1,4 +1,4 @@
-module.exports = [
+const categories = [
   { 
     category_name: 'lifesyle', // 1
     category_description: 'Lorem ipsum'
@@ -17,3 +17,5 @@ module.exports = [
     category_name: 'running'  // 5
   },
 ];
+
+module.exports = {categories};

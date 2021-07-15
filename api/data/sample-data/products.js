@@ -1,4 +1,4 @@
-module.exports = [
+const products = [
   {
     product_name: `Air Force 1 '07`,
     product_description: '',
@@ -36,3 +36,5 @@ module.exports = [
     gender_id: 1
   }
 ];
+
+module.exports = {products};

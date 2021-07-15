@@ -1,4 +1,4 @@
-const db = require('../../data/db-config');
+const db = require('../data/db-config');
 
 const findAll = async () => {
   const categories = await db('categories');

@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.use((err, req, res, next) => { //eslint-disable-line
+router.use((err, req, res, next) => { // eslint-disable-line
   res.status(err.status || 500).json({
     message: err.message,
     stack: err.stack

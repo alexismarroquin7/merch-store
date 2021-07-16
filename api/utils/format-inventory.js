@@ -1,21 +1,3 @@
-const groupBy = (list, keyGetter) => {
-  const map = new Map();
-
-  list.forEach(item => {
-    const key = keyGetter(item);
-    const collection = map.get(key);
-    
-    if(!collection){
-      map.set(key, [item]);
-    
-    } else {
-      collection.push(item);
-    }
-  });
-
-  return map;
-};
-
 const formatInventory = inventory => {
   if (!inventory){
     return inventory;
@@ -32,7 +14,7 @@ const formatInventory = inventory => {
     if(fullPrice){
       product = {
         ...row,
-        discount_percent: undefined,
+        discount_percent: null,
         discount_active: false 
       };
     } else {

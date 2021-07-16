@@ -11,8 +11,8 @@ const formatProducts = (rows) => {
       if(fullPrice){
         product = {
           ...row,
-          discount_percent: undefined,
-          discount_active: false 
+          discount_active: false,
+          discount_price: null,
         };
 
       } else {

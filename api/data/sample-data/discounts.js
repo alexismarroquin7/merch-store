@@ -1,4 +1,4 @@
-module.exports = [
+const discounts = [
   {
     discount_name: 'No Discount',  // 1
     discount_description: 'This is the discription for no discount',
@@ -7,7 +7,8 @@ module.exports = [
   },
   {
     discount_name: '10% Off',  // 2
-    discount_percent: 0.1
+    discount_percent: 0.1,
+    active: 1
   },
   {
     discount_name: '25% Off',  // 3
@@ -22,3 +23,5 @@ module.exports = [
     discount_percent: 0.75
   }
 ];
+
+module.exports = {discounts}; 

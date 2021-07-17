@@ -1,4 +1,4 @@
-module.exports = [
+const genders = [
   {
     gender_name: 'Men', // 1
   },
@@ -9,3 +9,5 @@ module.exports = [
     gender_name: 'Unisex' // 3
   }
 ];
+
+module.exports = {genders};

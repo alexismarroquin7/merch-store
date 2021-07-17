@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { findAll } = require('./category-model');
+const { findAll } = require('../inventory/inventory-model');
 
 router.get('/', async (req, res, next) => {
   try {
-    const categories = await findAll();
-    res.status(200).json(categories);
+    const inventory = await findAll();
+    res.status(200).json(inventory);
   } catch (err) {
     next(err);
   }

@@ -1,5 +1,5 @@
-exports.up = async (knex) => {
-  await knex.schema
+exports.up = (knex) => {
+  return knex.schema
     .createTable('discounts', (discounts) => {
       discounts.increments('discount_id');
       

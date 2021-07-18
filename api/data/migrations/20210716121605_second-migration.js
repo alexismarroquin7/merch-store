@@ -69,7 +69,7 @@ exports.up = (knex) => {
       .onDelete('RESTRICT')
       .onUpdate('CASCADE');
   })
-  
+
   .createTable('inventory_images', inventory_images => {
     inventory_images.increments('inventory_image_id');
     
@@ -93,7 +93,9 @@ exports.up = (knex) => {
 };
 
 exports.down = async (knex) => {
+  await knex.schema.dropTableIfExists('inventory_images');
   await knex.schema.dropTableIfExists('inventory');
+  await knex.schema.dropTableIfExists('images');
   await knex.schema.dropTableIfExists('colors');
   await knex.schema.dropTableIfExists('sizes');
 };

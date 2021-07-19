@@ -31,4 +31,6 @@ const inventory_images = [
   }
 ];
 
-module.exports = {inventory_images};
+module.exports = {
+  inventory_images
+};

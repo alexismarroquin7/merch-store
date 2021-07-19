@@ -23,26 +23,6 @@ exports.up = (knex) => {
 
   })
   
-  .createTable('images', images => {
-    images.increments('image_id');
-    
-    images.string('image_name')
-      .notNullable()
-      .unique();
-    
-    images.string('image_src')
-      .notNullable()
-      .unique();
-    
-    images.string('image_title')
-      .notNullable();
-    
-    images.string('image_alt')
-      .notNullable();
-    
-    images.string('image_description');
-  })
-  
   .createTable('inventory', inventory => {
     inventory.increments('inventory_id');
     
@@ -75,7 +55,26 @@ exports.up = (knex) => {
       .onDelete('RESTRICT')
       .onUpdate('CASCADE');
   })
-
+  .createTable('images', images => {
+    images.increments('image_id');
+    
+    images.string('image_name')
+      .notNullable()
+      .unique();
+    
+    images.string('image_src')
+      .notNullable()
+      .unique();
+    
+    images.string('image_title')
+      .notNullable();
+    
+    images.string('image_alt')
+      .notNullable();
+    
+    images.string('image_description');
+  })
+  
   .createTable('inventory_images', inventory_images => {
     inventory_images.increments('inventory_image_id');
     

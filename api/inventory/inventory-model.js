@@ -10,6 +10,8 @@ const findAll = async () => {
     .join('genders as g', 'g.gender_id', 'p.gender_id')
     .join('categories as cat', 'cat.category_id', 'p.category_id')
     .join('discounts as d', 'd.discount_id', 'p.discount_id')
+    .join('inventory_images as inv_img', 'inv_img.inventory_id', 'i.inventory_id')
+    .join('images as img', 'img.image_id', 'inv_img.image_id')
     .select(
       'i.inventory_id',
       'i.quantity',
@@ -24,6 +26,8 @@ const findAll = async () => {
       's.size_name',
       'd.discount_percent',
       'd.active as discount_active',
+      'inv_img.*',
+      'img.*'
     )
     .orderBy('i.inventory_id', 'asc');
   

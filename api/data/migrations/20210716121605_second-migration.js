@@ -34,6 +34,12 @@ exports.up = (knex) => {
       .notNullable()
       .unique();
     
+    images.string('image_title')
+      .notNullable();
+    
+    images.string('image_alt')
+      .notNullable();
+    
     images.string('image_description');
   })
   
@@ -75,7 +81,6 @@ exports.up = (knex) => {
     
     inventory_images.integer('image_id')
       .unsigned()
-      .unique()
       .notNullable()
       .references('image_id')
       .inTable('images')

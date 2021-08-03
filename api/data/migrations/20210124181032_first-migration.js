@@ -44,6 +44,7 @@ exports.up = (knex) => {
       brands.string('brand_name')
         .unique()
         .notNullable();
+      brands.string('brand_description');
       brands.timestamp('created_at')
         .defaultTo(knex.fn.now());
     })
